@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A399EC6-B98C-460D-82F1-790C6AA41CFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DebugSamples</RootNamespace>
+    <AssemblyName>DebugSamples</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add Chart\Add Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Chart\Add Chart.Designer.cs">
+      <DependentUpon>Add Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Data\Add Rows And Columns Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Data\Add Rows And Columns Data.Designer.cs">
+      <DependentUpon>Add Rows And Columns Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All Samples\All Samples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All Samples\All Samples.Designer.cs">
+      <DependentUpon>All Samples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change Styles\Change Styles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Styles\Change Styles.Designer.cs">
+      <DependentUpon>Change Styles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display ColumnChart\Display ColumnChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display ColumnChart\Display ColumnChart.Designer.cs">
+      <DependentUpon>Display ColumnChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display CurveChart\Display CurveChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display CurveChart\Display CurveChart.Designer.cs">
+      <DependentUpon>Display CurveChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display LineChart\Display LineChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display LineChart\Display LineChart.Designer.cs">
+      <DependentUpon>Display LineChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display PieChart\Display PieChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display PieChart\Display PieChart.Designer.cs">
+      <DependentUpon>Display PieChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="All Samples\All Samples.resx">
+      <DependentUpon>All Samples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change Styles\Change Styles.resx">
+      <DependentUpon>Change Styles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display ColumnChart\Display ColumnChart.resx">
+      <DependentUpon>Display ColumnChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display CurveChart\Display CurveChart.resx">
+      <DependentUpon>Display CurveChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display LineChart\Display LineChart.resx">
+      <DependentUpon>Display LineChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display PieChart\Display PieChart.resx">
+      <DependentUpon>Display PieChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChartSuite\ChartSuite.csproj">
+      <Project>{e17ce777-ff48-4c1d-bc40-f3be437181c0}</Project>
+      <Name>ChartSuite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
