@@ -62,6 +62,7 @@ namespace ChartSuite
                 {
                     points[row] = point[row][column];
                 }
+                Style.CurrentColor = Style.ColorList[column];
                 painter.DrawCurve(Style, points, 2);
             }
         }

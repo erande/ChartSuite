@@ -27,24 +27,23 @@ namespace ChartSuite
                     float[][] point = data.ChangeSeiresToArry(data.Series);
 
                     //Calculate each columns total value
-                    float[] totalNumber = CaculateSummations(data,point);
-                    float startAngle = 0;
+                    float[] totalNumber = CaculateRowSummations(data,point);
+                    float startAngle = 0; 
 
-                    for (int iCol = 0; iCol < data.CalculateColumnCount(); iCol++)
+                    for(int row=0;row<data.CalculateRowCount();row++)
                     {
-                        //Set circle's center point  
-                        ChartPoint centerPoint = new ChartPoint((iCol) * 150 + 100, 100);
-
-                        for (int iRow = 0; iRow < data.CalculateRowCount(); iRow++)
+                        ChartPoint centerPoint = new ChartPoint((row) * 150 + 100, 100);
+                        for (int column=0;column<data.CalculateColumnCount();column++)
                         {
-                            //Draw pie
-                            float angle = (point[iRow][iCol] / totalNumber[iCol]) * 360;
+                            float angle = (point[row][column] / totalNumber[row]) * 360;
 
+                            Style.CurrentColor = Style.ColorList[column];
                             painter.DrawPie(Style, centerPoint, startAngle, angle);
 
                             startAngle += angle;
 
-                            painter.DrawString(data.ReadColumnName()[iCol], Style, new ChartPoint(3 / 2 * centerPoint.X, centerPoint.Y + 110));
+                            painter.DrawString(data.ReadRowName()[row], Style, new ChartPoint(3 / 2 * centerPoint.X, centerPoint.Y + 110));
+
                         }
                     }
                 }
@@ -55,23 +54,16 @@ namespace ChartSuite
             }
         }
 
-        /// <summary>
-        /// Calculate each columns total value
-        /// </summary>
-        /// <param name="point"></param>
-        /// <param name="rowCount"></param>
-        /// <param name="columnCount"></param>
-        /// <returns></returns>
-        private float[] CaculateSummations(ChartData data,float[][] point)
+        private float[] CaculateRowSummations(ChartData data, float[][] point)
         {
-            int columnCount = data.CalculateColumnCount();
-            float[] maxNum = new float[columnCount];
-            for (int column = 0; column < columnCount; column++)
+            int rowCount = data.CalculateRowCount();
+            float[] maxNum = new float[rowCount];
+            for (int row = 0; row < rowCount; row++)
             {
-                maxNum[column] = 0;
-                for (int row = 0; row < data.CalculateRowCount(); row++)
+                maxNum[row] = 0;
+                for (int column = 0; column < data.CalculateColumnCount(); column++)
                 {
-                    maxNum[column] += point[row][column];
+                    maxNum[row] += point[row][column];
                 }
             }
             return maxNum;

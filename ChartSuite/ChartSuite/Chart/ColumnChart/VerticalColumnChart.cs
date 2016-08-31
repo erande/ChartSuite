@@ -46,6 +46,7 @@ namespace ChartSuite
                                 rectPoint[1] = new ChartPoint(start, tmpY - y);
                                 rectPoint[2] = new ChartPoint(start + interval, tmpY - y);
                                 rectPoint[3] = new ChartPoint(start + interval, tmpY - 1);
+                                Style.CurrentColor = Style.ColorList[dataSeries.Point.IndexOf(dataPoint)];
                                 painter.DrawPolygon(Style, rectPoint);
 
                                 if (interval > 10)

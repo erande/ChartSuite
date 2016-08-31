@@ -107,7 +107,7 @@ namespace ChartSuite
 
         private void DrawFram(Painter painter, ChartData data, ChartType chartType)
         {
-            DrawLegend(painter, data.ReadRowName().ToArray());
+            DrawLegend(painter, data.ReadColumnName().ToArray());
 
             if (chartType != ChartType.Pie)
             {
@@ -149,6 +149,7 @@ namespace ChartSuite
                 rectanglePoint[1] = new ChartPoint(tmpX + 6, tmpY);
                 rectanglePoint[2] = new ChartPoint(tmpX + 6, tmpY + 5);
                 rectanglePoint[3] = new ChartPoint(tmpX, tmpY + 5);
+                style.CurrentColor = style.ColorList[i];
                 painter.DrawPolygon(style, rectanglePoint);
 
                 //Set point to draw legend string

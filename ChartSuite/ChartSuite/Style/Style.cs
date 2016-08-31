@@ -28,6 +28,7 @@ namespace ChartSuite
         private Font font;
         private List<Color> colorList;
         private Color outLineColor;
+        private Color currentColor;
         private StyleType type;
 
         public Style()
@@ -85,6 +86,19 @@ namespace ChartSuite
                 return colorList;
             }
 
+        }
+
+        public Color CurrentColor
+        {
+            get
+            {
+                return currentColor;
+            }
+
+            set
+            {
+                currentColor = value;
+            }
         }
 
         private StyleType CheckType(StyleType type)

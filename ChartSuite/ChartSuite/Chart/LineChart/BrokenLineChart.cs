@@ -69,6 +69,7 @@ namespace ChartSuite
                             if (point[row + 1][column].X != 0)
                             {
                                 pointF[1] = new ChartPoint(point[row + 1][column].X, point[row + 1][column].Y);
+                                Style.CurrentColor = Style.ColorList[column];
                                 painter.DrawLine(Style, pointF, LineType.SolidLine);
                             }
                             else

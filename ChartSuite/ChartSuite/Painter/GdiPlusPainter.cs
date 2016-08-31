@@ -44,7 +44,7 @@ namespace ChartSuite
         {
             Pen linePen = new Pen(Color.Black, 1);
 
-            Pen piePen = new Pen(style.ColorList[0], 1);
+            Pen piePen = new Pen(style.CurrentColor, 1);
             SolidBrush piebrush = new SolidBrush(piePen.Color);
 
             graphics.DrawPie(linePen, point.X, point.Y, 100, 100, startAngle, angle);
@@ -72,10 +72,10 @@ namespace ChartSuite
                     pen.DashStyle = DashStyle.Dot;
                     break;
                 case LineType.SolidLine:
-                    pen = new Pen(style.ColorList[0], 2);
+                    pen = new Pen(style.CurrentColor, 2);
                     break;
                 default:
-                    pen = new Pen(style.ColorList[0], 2);
+                    pen = new Pen(style.CurrentColor, 2);
                     break;
             }
 
@@ -84,13 +84,13 @@ namespace ChartSuite
 
         protected override void DrawCurveCore(Style style, IEnumerable<ChartPoint> points, int width)
         {
-            Pen pen = new Pen(style.ColorList[0], width);
+            Pen pen = new Pen(style.CurrentColor, width);
             graphics.DrawCurve(pen, ToPointF(points));
         }
 
         protected override void DrawPolygonCore(Style style, IEnumerable<ChartPoint> points)
         {
-            Pen pen = new Pen(style.ColorList[0], 1);
+            Pen pen = new Pen(style.CurrentColor, 1);
             Brush brush = pen.Brush;
 
             graphics.DrawPolygon(pen, ToPointF(points));
